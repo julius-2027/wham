@@ -1,10 +1,9 @@
 # Author: Julius Neumann <julius-neumann@gmx.net>
-# 2025-06-29
+# 2025-09-09
 ###############################################
 
 import numpy as np
 import os
-import sys
 
 ###############################################
 # Class to calculate PMF (Potential of Mean Force) using WHAM (Weighted Histogram Analysis Method)
@@ -267,3 +266,4 @@ class WHAM:
         
         pmf -= np.min(pmf) # move the minimum of the pmf to zero
         self.pmf = pmf
+
