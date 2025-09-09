@@ -10,6 +10,8 @@ Python script implementing WHAM (Weighted Histogram Analysis Method). Based on R
 
 **Matplotlib** (https://matplotlib.org/). Used for plotting the output of the calculation if the optional `-plot` flag of `do_wham.py` is set.
 
+`wham.py` must be included in the same directory as `do_wham.py` since `do_wham.py` imports the `WHAM` class from `wham.py`.
+
 ## Usage of do_wham.py
 ```
 python do_wham.py <windows_file> <output_name>
