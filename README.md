@@ -4,9 +4,11 @@ Python script implementing WHAM (Weighted Histogram Analysis Method). Based on R
 ## Requirements
 **NumPy** (https://numpy.org/). Used for loading and saving data files, histogramming the data, and implementing the WHAM algorithm.
 
-**os** (https://docs.python.org/3/library/os.html). Built-in python module. Used for efficiently reading the last line of simulation data files to determine the simulation end time.
+**os** (https://docs.python.org/3/library/os.html). Built-in Python module. Used for efficiently reading the last line of simulation data files to determine the simulation end time.
 
-**Matplotlib** (https://matplotlib.org/). Used for plotting the output of the calculation if the optional `-plot` flag is set.
+**argparse** (https://docs.python.org/3/library/argparse.html). Built-in Python module. Used for parsing command line arguments in `do_wham.py`.
+
+**Matplotlib** (https://matplotlib.org/). Used for plotting the output of the calculation if the optional `-plot` flag of `do_wham.py` is set.
 
 ## Usage of do_wham.py
 ```
