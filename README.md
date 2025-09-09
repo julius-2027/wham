@@ -72,3 +72,12 @@ Under the assumption that the system is at equilibrium during the umbrella sampl
 `-print_progress` If this flag is given, then the progress of data loading and WHAM iterations will be printed out. Otherwise, only the time interval used for each partition is printed out.
 
 `-plot` If this flag is given, then a plot of all calculated PMFs is produced using `matplotlib.pyplot` after the calculation is finished.
+
+## Example data
+`windows_reus1_T310_N17_alpha.dat` and the `Data` directory contain example data taken from REUS (Replica Exchange Umbrella Sampling) MD (Molecular Dynamics) simulations of the N17 peptide (N-terminal 17 amino acids) from the huntingtin protein.
+
+N17 associates with lipid membranes, and tends to fold into an alpha helix in their presence. To probe this folding, the RMSD (root mean square deviation) of N17 from an alpha helical reference was chosen as the coordinate $\xi$ (xi) along which to calculate the PMF. Low values of RMSD indicate a folded state, and high values of RMSD indicate an unfolded state.
+
+The simulation data included here is from an umbrella sampling with 16 evenly-spaced window centers ranging from 0.9 &angst; to 6.15 &angst;. In each of the simulations, N17 is associated with a 5-component model of a mammalian lipid membrane, and its RMSD is harmonically restrained around the window center with a spring constant of 8.0 $\text{kcal } \text{ mol}^{-1}$ &angst; $^{-1}$. An integration time step of 4 fs was used, and the RMSD of N17 was recorded every 100 steps (0.4 ps). The data in this repository includes only every 100th recorded RMSD value (spacing of 40 ps between RMSD values). Each window's simulation was run for over 1 $\mu$s (250 million steps).
+
+The simulations were performed using NAMD 2.14 (Nanoscale Molecular Dynamics) together with the CHARMM36m all-hydrogen parameters for proteins, the CHARMM36 all-hydrogen parameters for lipids, and the CHARMM36 TIP3P water model were used. The simulations were run under NPT (constant number of atoms, constant pressure, constant temperature) at a temperature of 310 K (body temperature) and a pressure of 1.01325 bar (atmospheric pressure).
