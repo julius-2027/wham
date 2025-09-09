@@ -1,5 +1,5 @@
 # wham
-Python script implementing WHAM (Weighted Histogram Analysis Method). Based on Roux, B. (1995). Calculates PMF (Potential of Mean Force) along a single coordinate using data from umbrella sampling MD (Molecular Dynamics) simulations.
+Python script implementing WHAM (Weighted Histogram Analysis Method). Based on Roux, B. (1995).[^fn1] Calculates PMF (Potential of Mean Force) along a single coordinate using data from umbrella sampling MD (Molecular Dynamics) simulations.
 
 ## Requirements
 **NumPy** (https://numpy.org/). Used for loading and saving data files, histogramming the data, and implementing the WHAM algorithm.
@@ -81,3 +81,6 @@ N17 associates with lipid membranes, and tends to fold into an alpha helix in th
 The simulation data included here is from an umbrella sampling with 16 evenly-spaced window centers ranging from 0.9 &angst; to 6.15 &angst;. In each of the simulations, N17 is associated with a 5-component model of a mammalian lipid membrane, and its RMSD is harmonically restrained around the window center with a spring constant of 8.0 $\text{kcal } \text{ mol}^{-1}$ &angst; $^{-1}$. An integration time step of 4 fs was used, and the RMSD of N17 was recorded every 100 steps (0.4 ps). The data in this repository includes only every 100th recorded RMSD value (spacing of 40 ps between RMSD values). Each window's simulation was run for over 1 $\mu$s (250 million steps).
 
 The simulations were performed using NAMD 2.14 (Nanoscale Molecular Dynamics) together with the CHARMM36m all-hydrogen parameters for proteins, the CHARMM36 all-hydrogen parameters for lipids, and the CHARMM36 TIP3P water model were used. The simulations were run under NPT (constant number of atoms, constant pressure, constant temperature) at a temperature of 310 K (body temperature) and a pressure of 1.01325 bar (atmospheric pressure).
+
+## References
+[^fn1]: B. Roux, “The calculation of the potential of mean force using computer simulations,” Computer Physics Communications, vol. 91, no. 1, pp. 275–282, Sep. 1995, doi: 10.1016/0010-4655(95)00053-I.
