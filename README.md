@@ -1,5 +1,12 @@
 # wham
-Python script implementing WHAM (Weighted Histogram Analysis Method). Based on Roux, B. (1995). Calculates PMF (potential of mean force) along a single coordinate using data from umbrella sampling MD simulations.
+Python script implementing WHAM (Weighted Histogram Analysis Method). Based on Roux, B. (1995). Calculates PMF (Potential of Mean Force) along a single coordinate using data from umbrella sampling MD (Molecular Dynamics) simulations.
+
+## Requirements
+**NumPy** (https://numpy.org/). Used for loading and saving data files, histogramming the data, and implementing the WHAM algorithm.
+
+**os** (https://docs.python.org/3/library/os.html). Built-in python module. Used for efficiently reading the last line of simulation data files to determine the simulation end time.
+
+**Matplotlib** (https://matplotlib.org/). Used for plotting the output of the calculation if the optional `-plot` flag is set.
 
 ## Usage of do_wham.py
 ```
@@ -56,7 +63,7 @@ Under the assumption that the system is at equilibrium during the umbrella sampl
 
 `-tol` Tolerance for the WHAM algorithm, units of kcal/mol. WHAM iterates two equations (Roux Eq. 8 and 9) to determine a set of free energy constants $F_i$ that is required to align the PMFs from neighboring windows. The iterations are continued until the difference in $F_i$ to the previous iteration is below the tolerance. Default is tolerance = 0.0001 kcal/mol
 
-`-kT` Thermal energy, units of kcal/mol. 
+`-kT` Thermal energy, units of kcal/mol. Deafult is $k_B T = 0.001987191 \text{ kcal } \text{ mol}^{-1} \text{ K}^{-1} \cdot 310 \text{K} = 0.61602921 \text{ kcal } \text{ mol}^{-1}$, where $T = 310 \text{K}$ is the approximate body temperature in humans. 
 
 `-print_progress` If this flag is given, then the progress of data loading and WHAM iterations will be printed out. Otherwise, only the time interval used for each partition is printed out.
 
