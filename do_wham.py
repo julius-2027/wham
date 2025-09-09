@@ -1,7 +1,13 @@
+# Author: Julius Neumann <julius-neumann@gmx.net>
+# 2025-09-09
+###############################################
+
 import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 from wham import WHAM
+
+###############################################
 
 kB = 0.001987191 # Boltzmann constant in kcal/(mol*K)
 T_default = 310 # default temperature in Kelvin (approximate body temp in humans)
@@ -75,3 +81,4 @@ if args.plot:
     plt.grid()
     plt.legend()
     plt.show()
+
